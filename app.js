@@ -38,4 +38,24 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// Import mongoose module
+const mongoose = require('mongoose')
+
+// set "stricquery: false" to globally opt into filtering propeties that aren't in the schela
+
+mongoose.set("strictQuery", false)
+
+// define database url to connect to
+const mongoDB ="mongodb://127.0.0.1/my_database"
+
+//async function main() to wait for databse to connect, log error if problem
+
+async function main(){
+  await mongoose.connect(mongoDB)
+}
+
+main()
+  .then(console.log('mongoDB connect success'))
+  .catch((err)=>console.error(err))
+
 module.exports = app;
