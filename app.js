@@ -40,25 +40,18 @@ app.use(function(err, req, res, next) {
 
 // I. CONNECT MONGOOSE
 
-// Import mongoose module
-const mongoose = require('mongoose')
-
-// set "stricquery: false" to globally opt into filtering propeties that aren't in the schela
-
-mongoose.set("strictQuery", false)
-
-// define database url to connect to
-const mongoDB ="mongodb://127.0.0.1/my_database"
-
-//async function main() to wait for databse to connect, log error if problem
-
-async function main(){
-  await mongoose.connect(mongoDB)
-}
+// Set up mongoose connection
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
+const mongoDB = "insert_your_database_url_here";
 
 main()
-  .then(console.log('mongoDB connect success'))
-  .catch((err)=>console.error(err))
+  .then(console.log("mongoDB connected"))
+  .catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+}
 
+// details credentials connexion mongoDB : voir note BITWAR
 
 module.exports = app;
