@@ -43,7 +43,7 @@ app.use(function(err, req, res, next) {
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const mongoDB = "mongodb+srv://teotimepacreau:VfG%U4uDQtt69e@cluster0.fhbkv8l.mongodb.net/local_library?retryWrites=true&w=majority";
+const mongoDB = "mongodb+srv://teotimepacreau:VfGU4uDQtt69e@cluster0.fhbkv8l.mongodb.net/local_library?retryWrites=true&w=majority";
 
 main()
   .then(console.log("mongoDB connected"))
